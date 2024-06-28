@@ -16,6 +16,7 @@ export default function Island({isRotating, setIsRotating, setCurrentStage, ...p
   const lastX = useRef(0);
   const rotationSpeed = useRef(0);
   const dampingFactor = 0.95;
+  const rotationIncrement = Math.PI * 0.01;
 
   const handlePointerDown = (e) => {
     e.stopPropagation();
@@ -34,25 +35,11 @@ export default function Island({isRotating, setIsRotating, setCurrentStage, ...p
       const clientX = e.touces ? e.touches[0].clientX : e.clientX;
       const delta = (clientX - lastX.current) / viewport.width;
       lastX.current = clientX;
-      islandRef.current.rotation.y += delta * Math.PI * 0.01;
-      rotationSpeed.current = delta * Math.PI * 0.01;
+      islandRef.current.rotation.y += delta * rotationIncrement;
+      rotationSpeed.current = delta * rotationIncrement;
     }
   }
-  const handleKeyDown = (e) => {
-    if(e.key === 'ArrowRight') {
-      if(isRotating) setisRotating(true);
-      islandRef.current.rotation.y -= 0.01 * Math.PI;
-    }
-    else if(e.key === 'ArrowLeft') {
-      if(isRotating) setisRotating(true);
-      islandRef.current.rotation.y += 0.01 * Math.PI;
-    }
-  }
-  const handleKeyUp = (e) => {
-    if(e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-      setisRotating(false);
-    }
-  }
+
   useFrame(() => {
     if(!isRotating) {
       rotationSpeed.current *= dampingFactor;
@@ -83,6 +70,20 @@ export default function Island({isRotating, setIsRotating, setCurrentStage, ...p
     }
   })
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      e.preventDefault();
+      if(e.key === 'ArrowRight') {
+        islandRef.current.rotation.y -= rotationIncrement;
+      }
+      else if(e.key === 'ArrowLeft') {
+        islandRef.current.rotation.y += rotationIncrement;
+      }
+    }
+    const handleKeyUp = (e) => {
+      if(e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        setIsRotating(false);
+      }
+    }
     const canvas = gl.domElement;
     canvas.addEventListener('pointerup', handlePointerUp);
     canvas.addEventListener('pointerdown', handlePointerDown);

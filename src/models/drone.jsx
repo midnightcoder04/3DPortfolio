@@ -1,14 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useAnimations, useGLTF } from '@react-three/drei';
 import MechDrone from '../assets/3d/drone.glb';
+import React, { useState, useRef, useEffect } from 'react';
+import {useFrame, useThree} from '@react-three/fiber'
+import { useAnimations, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
-const Drone = ({isRotating, ...props }) => {
+const Drone = ({ isRotating, ...props }) => {
   const { scene, animations } = useGLTF(MechDrone);
   const ref = useRef();
   const { actions } = useAnimations(animations, ref);
-  const [currentState, setCurrentState] = useState(false);
-  // const [isDeployed, setIsDeployed] = useState(false);
+  const [tiltSpeed, setTiltSpeed] = useState(0);
+  const tiltFactor = 0.5; // Adjust this value to control tilt sensitivity
 
   useEffect(() => {
     const deployAction = actions?.deploy;
@@ -16,6 +17,7 @@ const Drone = ({isRotating, ...props }) => {
 
     let hoverInterval;
     let deployInterval;
+
     const playHoverSegment = () => {
       hoverAction.time = 3.0;
       hoverAction.reset().play();
@@ -32,19 +34,11 @@ const Drone = ({isRotating, ...props }) => {
       deployAction.setLoop(THREE.LoopOnce); // Play deploy animation once
       hoverAction.setLoop(THREE.LoopRepeat); // Loop the hover animation
 
-
       if (isRotating) {
-        setCurrentState(true);
-      }
-      if (currentState){
         deployAction.reset().play();
         console.log('Hovering!');
         playHoverSegment();
-      }
-      else {
-        deployAction.stop();
-        hoverAction.stop();
-      }
+      } 
     }
 
     // Cleanup intervals when component unmounts or dependencies change
@@ -52,13 +46,37 @@ const Drone = ({isRotating, ...props }) => {
       clearInterval(hoverInterval);
       clearInterval(deployInterval);
     };
-  }, [actions ,isRotating]);
+  }, [isRotating, actions]);
 
-  return (
-    <group ref={ref}>
-      <primitive object={scene} {...props} />
-    </group>
-  );
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'ArrowRight') {
+        setTiltSpeed(-0.1); // Set tilt speed to tilt left
+      } else if (event.key === 'ArrowLeft') {
+        setTiltSpeed(0.1); // Set tilt speed to tilt right
+      }
+    };
+
+    const handleKeyUp = () => {
+      setTiltSpeed(0); // Stop tilting on key up
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
+
+  useFrame(() => {
+    // Apply tilt effect to the drone
+    ref.current.rotation.z = tiltSpeed * tiltFactor;
+  });
+
+  return <primitive object={scene} ref={ref} {...props} />;
 };
 
 export default Drone;
+
