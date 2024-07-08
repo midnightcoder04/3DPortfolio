@@ -13,91 +13,91 @@ export default function Island({isRotating, setIsRotating, setCurrentStage, ...p
   const {gl, viewport} = useThree();
   const { nodes, materials } = useGLTF(toyIsland);
 
-  const lastX = useRef(0);
-  const rotationSpeed = useRef(0);
-  const dampingFactor = 0.95;
-  const rotationIncrement = Math.PI * 0.01;
+  // const lastX = useRef(0);
+  // const rotationSpeed = useRef(0);
+  // const dampingFactor = 0.95;
+  // const rotationIncrement = Math.PI * 0.01;
 
-  const handlePointerDown = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    setIsRotating(true);
-  }
-  const handlePointerUp = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    setIsRotating(false);
-  }
-  const handlePointerMove = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    if(isRotating) {
-      const clientX = e.touces ? e.touches[0].clientX : e.clientX;
-      const delta = (clientX - lastX.current) / viewport.width;
-      lastX.current = clientX;
-      islandRef.current.rotation.y += delta * rotationIncrement;
-      rotationSpeed.current = delta * rotationIncrement;
-    }
-  }
+  // const handlePointerDown = (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   setIsRotating(true);
+  // }
+  // const handlePointerUp = (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   setIsRotating(false);
+  // }
+  // const handlePointerMove = (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   if(isRotating) {
+  //     const clientX = e.touces ? e.touches[0].clientX : e.clientX;
+  //     const delta = (clientX - lastX.current) / viewport.width;
+  //     lastX.current = clientX;
+  //     islandRef.current.rotation.y += delta * rotationIncrement;
+  //     rotationSpeed.current = delta * rotationIncrement;
+  //   }
+  // }
 
-  useFrame(() => {
-    if(!isRotating) {
-      rotationSpeed.current *= dampingFactor;
-      if(Math.abs(rotationSpeed.current) < 0.0001) {
-        rotationSpeed.current = 0;
-      }
-      islandRef.current.rotation.y += rotationSpeed.current;
-    }
-      else {
-        const rotation = islandRef.current.rotation.y;
-        const realRotation = ((rotation % (2* Math.PI)) + 2 * Math.PI) % ( 2 * Math.PI )
-      switch(true) {
-        case realRotation < 0.1:
-          setCurrentStage(1);
-          break;
-        case realRotation < Math.PI / 2:
-          setCurrentStage(2);
-          break;
-        case realRotation < Math.PI:
-          setCurrentStage(3);
-          break;
-        case realRotation < 3 * Math.PI / 2:
-          setCurrentStage(4);
-          break;
-        default:
-          setCurrentStage(null);
-      }
-    }
-  })
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      e.preventDefault();
-      if(e.key === 'ArrowRight') {
-        islandRef.current.rotation.y -= rotationIncrement;
-      }
-      else if(e.key === 'ArrowLeft') {
-        islandRef.current.rotation.y += rotationIncrement;
-      }
-    }
-    const handleKeyUp = (e) => {
-      if(e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-        setIsRotating(false);
-      }
-    }
-    const canvas = gl.domElement;
-    canvas.addEventListener('pointerup', handlePointerUp);
-    canvas.addEventListener('pointerdown', handlePointerDown);
-    canvas.addEventListener('pointermove', handlePointerMove);
-    document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('keyup', handleKeyUp);
-    return () => {
-      canvas.removeEventListener('pointerup', handlePointerUp);
-      canvas.removeEventListener('pointerdown', handlePointerDown);
-      canvas.removeEventListener('pointermove', handlePointerMove);
-      document.removeEventListener('keydown', handleKeyDown);
-      document.removeEventListener('keyup', handleKeyUp);
-    }
-  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove])
+  // useFrame(() => {
+  //   if(!isRotating) {
+  //     rotationSpeed.current *= dampingFactor;
+  //     if(Math.abs(rotationSpeed.current) < 0.0001) {
+  //       rotationSpeed.current = 0;
+  //     }
+  //     islandRef.current.rotation.y += rotationSpeed.current;
+  //   }
+  //     else {
+  //       const rotation = islandRef.current.rotation.y;
+  //       const realRotation = ((rotation % (2* Math.PI)) + 2 * Math.PI) % ( 2 * Math.PI )
+  //     switch(true) {
+  //       case realRotation < 0.1:
+  //         setCurrentStage(1);
+  //         break;
+  //       case realRotation < Math.PI / 2:
+  //         setCurrentStage(2);
+  //         break;
+  //       case realRotation < Math.PI:
+  //         setCurrentStage(3);
+  //         break;
+  //       case realRotation < 3 * Math.PI / 2:
+  //         setCurrentStage(4);
+  //         break;
+  //       default:
+  //         setCurrentStage(null);
+  //     }
+  //   }
+  // })
+  // useEffect(() => {
+  //   const handleKeyDown = (e) => {
+  //     e.preventDefault();
+  //     if(e.key === 'ArrowRight') {
+  //       islandRef.current.rotation.y -= rotationIncrement;
+  //     }
+  //     else if(e.key === 'ArrowLeft') {
+  //       islandRef.current.rotation.y += rotationIncrement;
+  //     }
+  //   }
+  //   const handleKeyUp = (e) => {
+  //     if(e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+  //       setIsRotating(false);
+  //     }
+  //   }
+  //   const canvas = gl.domElement;
+  //   canvas.addEventListener('pointerup', handlePointerUp);
+  //   canvas.addEventListener('pointerdown', handlePointerDown);
+  //   canvas.addEventListener('pointermove', handlePointerMove);
+  //   document.addEventListener('keydown', handleKeyDown);
+  //   document.addEventListener('keyup', handleKeyUp);
+  //   return () => {
+  //     canvas.removeEventListener('pointerup', handlePointerUp);
+  //     canvas.removeEventListener('pointerdown', handlePointerDown);
+  //     canvas.removeEventListener('pointermove', handlePointerMove);
+  //     document.removeEventListener('keydown', handleKeyDown);
+  //     document.removeEventListener('keyup', handleKeyUp);
+  //   }
+  // }, [gl, handlePointerDown, handlePointerUp, handlePointerMove])
 
   return (
     <a.group ref={islandRef} {...props} >
