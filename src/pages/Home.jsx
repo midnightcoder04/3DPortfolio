@@ -249,7 +249,7 @@ const Home = () => {
       setCurrentAudioFile(soundFile);
       setAudioPlaying(true);
     }
-  };
+  };  
 
   const resetEasterEgg = () => {
     setEasterEgg(false);
@@ -310,7 +310,7 @@ const Home = () => {
       onClick={() => setCurrentStage((prevStage) => (prevStage > 1 ? prevStage - 1 : points.length))}>
         <span className='text-bold text-2xl'>&lt;</span></button>
       <button className={`block absolute z-10 h-12 w-12 bg-opacity-50 ${audioPlaying ? 'bg-black animate-pulse' : 'bg-red-950'}
-      bottom-3.5 left-2 m-1 text-white rounded-full cursor-pointer`}
+      bottom-5 left-5 m-1 text-white rounded-full cursor-pointer`}
       onClick={() => playBGM('/bgm.mp3')}>
         <span className='text-bold text-2xl'>⋆.˚📼</span></button>
         

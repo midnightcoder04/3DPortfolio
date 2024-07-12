@@ -13,6 +13,7 @@ body {
   font-family: "Work Sans", sans-serif;
   background-color: #94d2ef; /* Dark background */
   color: #e2e8f0; /* Light text color for contrast */
+  overflow: auto;
 }
 
 body:has(.card[data-color="blue"]:hover) {
