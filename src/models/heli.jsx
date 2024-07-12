@@ -3,10 +3,11 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 import Heli from '../assets/3d/helicopter.glb';
 import * as THREE from 'three';
 
-const Helicopter = ({ animate }) => {
+const Helicopter = ({ animate, onClick }) => {
   const { scene, animations } = useGLTF(Heli);
   const ref = useRef();
   const { actions } = useAnimations(animations, ref);
+  const handleClick = onClick();
 
   useEffect(() => {
     const startSpinningAction = actions['Start_Spinning'];
@@ -49,7 +50,7 @@ const Helicopter = ({ animate }) => {
   }, [animate, actions]);
 
   return (
-    <mesh scale={[0.05, 0.05, 0.05]} position={[-285, -20.8, -100]} rotation={[0, 1.5, 0]}>
+    <mesh onClick={handleClick} scale={[0.05, 0.05, 0.05]} position={[-285, -20.8, -100]} rotation={[0, 1.5, 0]}>
       <primitive object={scene} ref={ref} />
     </mesh>
   );

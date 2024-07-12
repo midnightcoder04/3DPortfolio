@@ -3,10 +3,11 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 import * as THREE from 'three';
 import Heart from '../assets/3d/heart.glb';
 
-const Love = () => {
+const Love = ({onClick}) => {
   const { scene, animations } = useGLTF(Heart);
   const ref = useRef();
   const { actions } = useAnimations(animations, ref);
+  const handleClick = onClick();
 
   // Adjust the material properties to increase brightness
   useEffect(() => {
@@ -27,7 +28,7 @@ const Love = () => {
   }, [actions]);
 
   return (
-    <mesh scale={[90,90,90]} position={[-23, 5, -190]} rotation={[0, 0, 0]}>
+    <mesh onClick={handleClick} scale={[90,90,90]} position={[-23, 5, -190]} rotation={[0, 0, 0]}>
       <primitive object={scene} ref={ref} />
     </mesh>
   );

@@ -11,7 +11,7 @@
 
 body {
   font-family: "Work Sans", sans-serif;
-  background-color: #c8ced9; /* Dark background */
+  background-color: #94d2ef; /* Dark background */
   color: #e2e8f0; /* Light text color for contrast */
 }
 
@@ -25,27 +25,30 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply max-w-5xl mx-auto sm:pt-20 pb-10 pt-24 px-8 min-h-[calc(100vh-80px)];
   }
 
   .head-text {
-    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins text-white;
+    @apply mt-5 sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins text-black;
   }
 
   .subhead-text {
-    @apply font-semibold sm:text-3xl text-xl relative font-poppins text-gray-300;
+    @apply font-semibold sm:text-3xl text-xl relative font-poppins text-gray-800;
   }
 
   .blue-gradient_text {
-    @apply bg-gradient-to-r from-blue-500 to-blue-900 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent;
+  }
+  .black-gradient_text {
+    @apply bg-gradient-to-r from-slate-500 to-blue-900 bg-clip-text text-transparent;
   }
 
   .input {
-    @apply bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
+    @apply bg-blue-200 border border-gray-700 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
   }
 
   .textarea {
-    @apply block p-2.5 w-full text-sm text-gray-200 bg-gray-800 rounded-lg border border-gray-700 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
+    @apply block p-2.5 w-full text-sm text-black bg-blue-200 rounded-lg border border-gray-700 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
   }
 
   .btn {
@@ -53,7 +56,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0 text-white;
+    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-6xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0 text-white;
   }
 
   .footer {
@@ -73,11 +76,106 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .cta {
-    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
+    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 mb-6 gap-7;
   }
 
   .cta-text {
-    @apply text-gray-300 font-extrabold flex-1 text-3xl max-md:text-center;
+    @apply text-gray-950 font-bold flex-1 text-3xl max-md:text-center;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeBye {
+    0% {
+      opacity: 0;
+      color: rgb(255, 255, 255);
+    }
+    10% {
+      opacity: 0;
+      color: rgb(255, 255, 255);
+    }
+    60% {
+      opacity: 0;
+      color: rgb(255, 255, 255);
+    }
+    70% {
+      opacity: 0.2;
+      color: rgb(255, 48, 141);
+    }
+    80% {
+      opacity: 0.13;
+      color: rgb(255, 48, 141);
+    }
+    90% {
+      opacity: 0.13;
+      color: rgb(255, 48, 141);
+    }
+    95% {
+      opacity: 0.7;
+      color: rgb(255, 0, 10);
+    }
+    100% {
+      opacity: 0;
+      color: rgb(240, 0, 0);
+    }
+  }
+  @keyframes Col {
+    0% {
+      opacity: 0;
+      color: rgb(255, 255, 255);
+    }
+    22% {
+      opacity: 0;
+      color: rgb(255, 48, 141);
+    }
+    44% {
+      opacity: 0.6;
+      color: rgb(182, 46, 255);
+    }
+    66% {
+      opacity: 0.6;
+      color: rgb(220, 51, 152);
+    }
+    100% {
+      opacity: 0;
+      color: white;
+      display: none;
+    } 
+  }
+  @keyframes fadearrow {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .fade-in {
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+  .fadewelcome {
+    animation: Col 8s ease-in-out forwards;
+  }
+  .fade-bye {
+    animation: fadeBye 15s ease-in-out infinite;
+  }
+  .fade-arrow {
+    animation: fadearrow 15s ease-in-out infinite;
   }
 }
 
@@ -113,7 +211,7 @@ body:has(.card[data-color="green"]:hover) {
   transform-origin: bottom right;
   transform: rotateZ(15deg);
   will-change: transform;
-  box-shadow: 16px 0 40px #e4e4e4;
+  box-shadow: 16px 0 3ch #a1abf1;
 }
 
 .block-container .btn-back-red {
@@ -129,7 +227,7 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 .block-container .btn-back-blue {
-  background: linear-gradient(135deg, #0061ff -20%, #60efff 120%);
+  background: linear-gradient(135deg, #0061ff -20%, #1e545a 120%);
 }
 
 .block-container .btn-back-orange {
@@ -150,7 +248,7 @@ body:has(.card[data-color="green"]:hover) {
   z-index: 1;
   width: inherit;
   height: inherit;
-  background-color: #1a202c33; /* Dark transparent background */
+  background-color: #f4f8ff30; /* Dark transparent background */
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   transition: 250ms;
@@ -182,4 +280,55 @@ body:has(.card[data-color="green"]:hover) {
   border: #2d3748;
   box-shadow: 0.6vmin 0.6vmin #2d3748, 1vmin 1vmin #4a5568, 1vmin 1vmin #4a5568,
               0.65vmin 1vmin #4a5568, 1vmin 0.65vmin #4a5568;
+}
+
+.neo-brutalism-magenta {
+  background: #1a202c;
+  position: relative;
+  opacity: 70%;
+  border-radius: 10px;
+  border: #d926a9; /* Magenta border color */
+  box-shadow: 
+    0.6vmin 0.6vmin #ff00ff,  /* Magenta shadow color 1 */
+    1vmin 1vmin #ff00ff,      /* Magenta shadow color 2 */
+    1vmin 1vmin #ff00ff,      /* Magenta shadow color 3 */
+    0.65vmin 1vmin #ff00ff,   /* Magenta shadow color 4 */
+    1vmin 0.65vmin #ff00ff;   /* Magenta shadow color 5 */
+}
+
+.neo-brutalism-purple {
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  border-radius: 10px;
+  border: #6a0dad; /* Purple border color */
+   /* Purple shadow color 2 */
+}
+
+.link {
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  border-radius: 20%;
+  padding: 3px 8px 3px 8px;
+  margin: 0px 4px 0px 4px;
+}
+
+.link-amongus {
+  background: rgba(255, 225, 2, 1);
+  position: relative;
+  border-radius: 20%;
+  padding: 3px 6px 3px 6px;
+  margin: 0px 4px 0px 4px;
+}
+
+.neo-brutalism-purple2 {
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  border-radius: 10px;
+  border: #6a0dad; /* Purple border color */
+  box-shadow: 
+    0.3vmin 0.3vmin #4b0082,  /* Indigo shadow color */
+    0.66vmin 0.66vmin #0000ff,      /* Blue shadow color 1 */
+    0.66vmin 0.66vmin #0000ff,      /* Blue shadow color 2 */
+    0.44vmin 0.66vmin #6a0dad,   /* Purple shadow color 1 */
+    0.66vmin 0.44vmin #6a0dad;   /* Purple shadow color 2 */
 }

@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useAnimations, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
-const Drone = ({ isRotating, ...props }) => {
+const Drone = ({ isLaunched, ...props }) => {
   const { scene, animations } = useGLTF(MechDrone);
   const ref = useRef();
   const { actions } = useAnimations(animations, ref);
@@ -51,18 +51,10 @@ const Drone = ({ isRotating, ...props }) => {
   }, [deployed, hovering, actions]);
 
   useEffect(() => {
-    const handleKeyDown = () => {
-      if (!deployed) {
+      if (isLaunched && !deployed) {
         setDeployed(true);
       }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [deployed]);
+  }, [isLaunched]);
 
   return <primitive object={scene} ref={ref} {...props} />;
 };
