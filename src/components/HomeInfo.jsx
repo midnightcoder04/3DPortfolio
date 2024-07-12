@@ -79,7 +79,7 @@ const renderContent = (visible, setVisible) => ({
 <div key='7' className='absolute bottom-10 md:bottom-12 lg:bottom-14 left-0 right-0 z-10 flex justify-center items-center pointer-events-none'>
   <h1 className= {`sm:text-lg sm:leading-snug text-center py-4 px-8 mx-3 lg:text-2xl font-worksans text-black neo-brutalism-purple ${visible ? 'visible fade-in' : 'invisible animate-pulse' }`} >
     Can't reach me? ↗ Join my <span className='font-bold'>Discord</span> server,
-    <a href='https://discord.gg/7Qb3bJ6' target='_blank' rel='noreferrer' className='font-mono font-semibold pointer-events-auto link-amongus'>
+    <a href='https://discord.gg/maFy9h4sjK' target='_blank' rel='noreferrer' className='font-mono font-semibold pointer-events-auto link-amongus'>
       <img src='/sus.jpg' alt='Controller' className='inline-block h-6 w-6 mx-1' />
     </a>
      <br />and if you're lucky🍀 you'll find me there once a month. <i>P.S: Fate's been unkind.</i>
