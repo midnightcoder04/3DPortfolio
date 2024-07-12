@@ -9,18 +9,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          if (document.body.requestFullscreen) {
-              document.body.requestFullscreen();
-          } else if (document.body.mozRequestFullScreen) { // Firefox
-              document.body.mozRequestFullScreen();
-          } else if (document.body.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-              document.body.webkitRequestFullscreen();
-          } else if (document.body.msRequestFullscreen) { // IE/Edge
-              document.body.msRequestFullscreen();
-          }
-      });
-    </script>
   </body>
 </html>
