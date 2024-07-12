@@ -316,7 +316,7 @@ const Home = () => {
         
         </div>}
 
-      {easterEgg && <div className='absolute top-0 left-0 right-0 bottom-0 z-20 flex items-start justify-center bg-black bg-opacity-50'>
+      {easterEgg && <div className='absolute top-0 left-0 right-0 bottom-0 z-20 flex items-center justify-center bg-black bg-opacity-50'>
         <div className=" bg-transparent flex items-center justify-center opacity-80 w-full">
         <div>
           <h1 className="text-2xl md:text-3xl lg:text-4xl mb-8 animate-pulse hover:animate-bounce ">🫧</h1>
