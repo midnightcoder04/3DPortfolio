@@ -300,12 +300,12 @@ const Home = () => {
 
       { isLaunched && <HomeInfo currentStage={currentStage} easterEgg={easterEgg} />}
 
-      { isLaunched && <div><button className='block absolute z-10 h-16 lg:hidden fade-arrow
+      { isLaunched && <div><button className='block absolute z-10 h-16 fade-arrow
       bottom-2/4 right-2 p-1 bg-black text-white rounded cursor-pointer'
       onClick={() => setCurrentStage((prevStage) => (prevStage < points.length ? prevStage + 1 : 1))}>
         <span className='text-bold text-2xl'>&gt;</span>
       </button>
-      <button className='block absolute z-10 h-16 lg:hidden fade-arrow
+      <button className='block absolute z-10 h-16 fade-arrow
       bottom-2/4 left-2 p-1 bg-black text-white rounded cursor-pointer'
       onClick={() => setCurrentStage((prevStage) => (prevStage > 1 ? prevStage - 1 : points.length))}>
         <span className='text-bold text-2xl'>&lt;</span></button>
@@ -317,7 +317,7 @@ const Home = () => {
         </div>}
 
       {easterEgg && <div className='absolute top-0 left-0 right-0 bottom-0 z-20 flex items-start justify-center bg-black bg-opacity-50'>
-        <div className=" bg-transparent flex items-center justify-center opacity-80 w-full h-screen">
+        <div className=" bg-transparent flex items-center justify-center opacity-80 w-full">
         <div>
           <h1 className="text-2xl md:text-3xl lg:text-4xl mb-8 animate-pulse hover:animate-bounce ">🫧</h1>
           <h1 className="text-2xl md:text-3xl lg:text-4xl mb-8 animate-pulse hover:animate-bounce">✨</h1>
