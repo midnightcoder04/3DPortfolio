@@ -32,7 +32,7 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className='py-14'>
+      <div className='pt-14'>
         <h3 className='subhead-text'>Work Experience</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-600'>
         <p>I have experience in programming through freelancing and solving 
