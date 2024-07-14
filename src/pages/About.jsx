@@ -94,8 +94,8 @@ const About = () => {
             <li><a href='https://www.youtube.com/watch?v=FkowOdMjvYo'>Inspiration Tutorial</a></li>
             <li><a href='https://sketchfab.com/'>SketchFab</a></li>
             <li><a href='https://www.fiftysounds.com/'>Fiftysounds</a></li>
-            <li><a href='https://emojidb.org/'>Emojis</a></li>
-            <li><a href='https://www.svgrepo.com/'>Icons</a></li>
+            <li><a href='https://emojidb.org/'>Emojis from emojidb</a></li>
+            <li><a href='https://www.svgrepo.com/'>Icons from svgrepo</a></li>
             <li><a href='https://www.youtube.com/watch?v=ed7UrdNEYrQ'>Bgm: So Far Away</a></li>
             <br />
             <li><a href='https://skfb.ly/6YDPn'></a>Model Island by leslava</li>
