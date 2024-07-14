@@ -28,7 +28,7 @@ export default function Deadpool({animate, ...props}) {
       group.current.rotation.y += delta;
     }
     if (animate === 2) {
-      group.current.rotation.y += delta*15;
+      group.current.rotation.y -= delta*15;
     }
   });
 

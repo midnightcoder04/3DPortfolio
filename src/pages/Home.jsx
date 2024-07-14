@@ -309,10 +309,10 @@ const Home = () => {
       bottom-2/4 left-2 p-1 bg-black text-white rounded-2xl cursor-pointer'
       onClick={() => setCurrentStage((prevStage) => (prevStage > 1 ? prevStage - 1 : points.length))}>
         <span className='text-bold text-2xl'>&lt;</span></button>
-      <button className={`block absolute z-10 h-12 w-12 bg-opacity-50 ${audioPlaying ? 'bg-black animate-pulse' : 'bg-red-950'}
-      bottom-5 left-5 m-1 text-white rounded-full cursor-pointer`}
+      <button className={`block absolute z-10 h-12 lg:h-14 w-12 lg:w-14 bg-opacity-50 ${audioPlaying ? 'bg-black animate-pulse' : 'bg-red-950'}
+      bottom-12 md:bottom-14 lg:bottom-16 left-6 sm:left-8 md:left-10 lg:left-12 m-1 text-white rounded-full cursor-pointer`}
       onClick={() => playBGM('/bgm.mp3')}>
-        <span className='text-bold text-2xl'>⋆.˚📼</span></button>
+        <span className='text-bold text-2xl lg:text-3xl'>⋆.˚📼</span></button>
         
         </div>}
 
