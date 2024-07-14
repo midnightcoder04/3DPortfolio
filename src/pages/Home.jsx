@@ -300,13 +300,13 @@ const Home = () => {
 
       { isLaunched && <HomeInfo currentStage={currentStage} easterEgg={easterEgg} />}
 
-      { isLaunched && <div><button className='block absolute z-10 h-16 fade-arrow
-      bottom-2/4 right-2 p-1 bg-black text-white rounded cursor-pointer'
+      { isLaunched && <div><button className='block absolute z-10 h-20 w-8 fade-arrow
+      bottom-2/4 right-2 p-1 bg-black text-white rounded-2xl cursor-pointer'
       onClick={() => setCurrentStage((prevStage) => (prevStage < points.length ? prevStage + 1 : 1))}>
         <span className='text-bold text-2xl'>&gt;</span>
       </button>
-      <button className='block absolute z-10 h-16 fade-arrow
-      bottom-2/4 left-2 p-1 bg-black text-white rounded cursor-pointer'
+      <button className='block absolute z-10 h-20 w-8 fade-arrow
+      bottom-2/4 left-2 p-1 bg-black text-white rounded-2xl cursor-pointer'
       onClick={() => setCurrentStage((prevStage) => (prevStage > 1 ? prevStage - 1 : points.length))}>
         <span className='text-bold text-2xl'>&lt;</span></button>
       <button className={`block absolute z-10 h-12 w-12 bg-opacity-50 ${audioPlaying ? 'bg-black animate-pulse' : 'bg-red-950'}
