@@ -112,58 +112,58 @@ export const skills = [
 ];
 
 export const experiences = [
-    {
-        title: "Python Programmer?",
-        company_name: "xxxxxxx",
-        icon: leetcode,
-        iconBg: "#3ccbe1",
-        date: "March 20XX - April 20XX",
-        points: [
-            "Developing and maintaining web applications using xxxxx.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Data Science?",
-        company_name: "xxxxxx",
-        icon: pg5,
-        iconBg: "#fbc3bc",
-        date: "Jan 20XX - Feb 20XX",
-        points: [
-            "Developing and maintaining web applications using xxxxx.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Web Developer",
-        company_name: "xxxxx",
-        icon: discord,
-        iconBg: "#b7e4a7",
-        date: "Jan 20XX - Jan 20XX",
-        points: [
-            "Developing and maintaining web applications using xxxxx.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Full stack Developer",
-        company_name: "xxxxxx",
-        icon: pg4,
-        iconBg: "#aa96da",
-        date: "Jan 20XX - Present",
-        points: [
-            "Developing and maintaining web applications using xxxxx.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
+    // {
+    //     title: "Python Programmer?",
+    //     company_name: "xxxxxxx",
+    //     icon: leetcode,
+    //     iconBg: "#3ccbe1",
+    //     date: "March 20XX - April 20XX",
+    //     points: [
+    //         "Developing and maintaining web applications using xxxxx.js and other related technologies.",
+    //         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+    //         "Implementing responsive design and ensuring cross-browser compatibility.",
+    //         "Participating in code reviews and providing constructive feedback to other developers.",
+    //     ],
+    // },
+    // {
+    //     title: "Data Science?",
+    //     company_name: "xxxxxx",
+    //     icon: pg5,
+    //     iconBg: "#fbc3bc",
+    //     date: "Jan 20XX - Feb 20XX",
+    //     points: [
+    //         "Developing and maintaining web applications using xxxxx.js and other related technologies.",
+    //         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+    //         "Implementing responsive design and ensuring cross-browser compatibility.",
+    //         "Participating in code reviews and providing constructive feedback to other developers.",
+    //     ],
+    // },
+    // {
+    //     title: "Web Developer",
+    //     company_name: "xxxxx",
+    //     icon: discord,
+    //     iconBg: "#b7e4a7",
+    //     date: "Jan 20XX - Jan 20XX",
+    //     points: [
+    //         "Developing and maintaining web applications using xxxxx.js and other related technologies.",
+    //         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+    //         "Implementing responsive design and ensuring cross-browser compatibility.",
+    //         "Participating in code reviews and providing constructive feedback to other developers.",
+    //     ],
+    // },
+    // {
+    //     title: "Full stack Developer",
+    //     company_name: "xxxxxx",
+    //     icon: pg4,
+    //     iconBg: "#aa96da",
+    //     date: "Jan 20XX - Present",
+    //     points: [
+    //         "Developing and maintaining web applications using xxxxx.js and other related technologies.",
+    //         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+    //         "Implementing responsive design and ensuring cross-browser compatibility.",
+    //         "Participating in code reviews and providing constructive feedback to other developers.",
+    //     ],
+    // },
 ];
 
 export const socialLinks = [

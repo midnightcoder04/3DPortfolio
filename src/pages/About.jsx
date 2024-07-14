@@ -8,14 +8,15 @@ const About = () => {
   return (
     <section className='max-container'>
       <h1 className='head-text'>
-        Hello I'm <span className='black-gradient_text font-semibold drop-shadow'>Someone</span> </h1>
+        Hello I'm <span className='black-gradient_text font-semibold drop-shadow'>Mr. Hari</span> </h1>
       <div className='mt-5 flex flex-col gap-3 text-slate-700'>
-        <p> A tech explorer based in India, specializing in freelance work
-          and cool side projects. I'm a self-taught developer with a passion for
-          building beautiful and functional websites. I have experience working
-          with modern web technologies like React, Next.js, Threejs, Tailwind CSS,
-          and more. I'm currently seeking new opportunities to work on exciting
-          projects with amazing people.
+        <p> I am a passionate tech explorer based in India, specializing in freelance projects and 
+          innovative side ventures. As a self-taught developer, I flourish on creating not only beautiful 
+          and functional websites but also exploring diverse areas of programming and technology. With 
+          extensive experience in modern web technologies like React, Next.js, Three.js, and Tailwind 
+          CSS, as well as a keen interest in other fields of programming, I am dedicated to integrating 
+          cutting-edge solutions into my work. Currently, I am seeking exciting opportunities to 
+          collaborate with inspiring individuals on groundbreaking projects across various tech domains.
         </p>
       </div>
       <div className='py-10 flex flex-col'>
@@ -74,6 +75,45 @@ const About = () => {
             </VerticalTimeline>
           </div>
       </div>
+      <div className='py-10'>
+        <h3 className='subhead-text'>About the website</h3>
+        <div className='mt-5 flex flex-col gap-3 text-slate-600'>
+        <p>This project took off from a tutorial by JavaScript Mastery on 3D websites. 
+          As the project progressed, I went my own way, incorporating my own design and 
+          content, making it unique. It took me seven days of morning-to-late-night 
+          sessions to bring this website to life. During this time, I did a lot of research 
+          to add new elements and received help from various individuals along the way. 
+          I'm always open to feedback and suggestions for improving the website. Feel 
+          free to reach out to me with your thoughts and ideas—I'd love to hear from you. 
+          Thank you for visiting my website.
+          <br /><br />
+          <span className='font-semibold'>Credits</span>
+          <ul className='m-4 list-disc '>
+            
+            <li><a href='https://www.youtube.com/@javascriptmastery'>JavaScript mastery</a> </li>
+            <li><a href='https://www.youtube.com/watch?v=FkowOdMjvYo'>Inspiration Tutorial</a></li>
+            <li><a href='https://sketchfab.com/'>SketchFab</a></li>
+            <li><a href='https://www.fiftysounds.com/'>Fiftysounds</a></li>
+            <li><a href='https://emojidb.org/'>Emojis</a></li>
+            <li><a href='https://www.svgrepo.com/'>Icons</a></li>
+            <li><a href='https://www.youtube.com/watch?v=ed7UrdNEYrQ'>Bgm: So Far Away</a></li>
+            <br />
+            <li><a href='https://skfb.ly/6YDPn'></a>Model Island by leslava</li>
+            <li><a href='https://skfb.ly/oEVKL'></a>Model Sky by skybox3dArchitect</li>
+            <li><a href='https://skfb.ly/6UEqU'></a>Model Drone by Kai Xiang</li>
+            <li><a href='https://skfb.ly/ozS9S'></a>Model Car by Bandit.545</li>
+            <li><a href='https://skfb.ly/oLvST'></a>Model Sword by Ergoni</li>
+            <li><a href='https://skfb.ly/6zNVt'></a>Model Dragon by Maximum993</li>
+            <li><a href='https://skfb.ly/6W8wI'></a>Model Helicopter by davimfs7</li>
+            <li><a href='https://skfb.ly/6zCDK'></a>Model Reaper by YJW</li>
+            <li><a href='https://skfb.ly/6YnOB'></a>Model Demon by mRiot</li>
+            <li><a href='https://skfb.ly/YsvQ'></a>Model Heart by mano1creative</li>
+            <li><a href='https://skfb.ly/6ZEHR'></a>Model Birds by Zacxophone</li>
+            <li><a href='https://skfb.ly/6GMqo'></a>Model Deadpool by Aumentados</li>
+          </ul>
+        </p>
+          </div>
+        </div>
       <hr className='border-slate-400'></hr>
       <CTA />
     </section>

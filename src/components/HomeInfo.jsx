@@ -14,7 +14,7 @@ const renderContent = (visible, setVisible) => ({
     <div key='2' className='absolute bottom-12 md:bottom-14 lg:bottom-16 left-0 right-0 z-10 flex justify-center items-center pointer-events-none'>
     <h1 className={`sm:text-lg sm:leading-snug text-center py-4 px-8 ml-5 mr-2 ${visible ? 'visible fade-in' : 'invisible animate-pulse' }
     lg:text-2xl font-worksans text-black neo-brutalism-purple `}>
-      Hi, I am <span className='font-bold'>Abq(nickname)</span> („• ֊ •„)
+      Hi, I am <span className='font-bold'>Hari</span> („• ֊ •„)
       <br />A simple fellow from planet Earth 🌏 </h1>
       <div className={`relative -bottom-0 -right-0 -left-0 -top-0 opacity-50 w-6 h-6 md:w-10 md:h-10 rounded-full 
       cursor-pointer pointer-events-auto ${visible ? 'bg-blue-500 fade-in' : 'bg-slate-300 animate-bounce'} `}

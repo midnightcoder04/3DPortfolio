@@ -153,13 +153,13 @@ body:has(.card[data-color="green"]:hover) {
     0% {
       opacity: 0;
     }
-    40% {
+    35% {
       opacity: 0;
     }
     50% {
       opacity: 0.5;
     }
-    60% {
+    65% {
       opacity: 0;
     }
     100% {
@@ -176,7 +176,7 @@ body:has(.card[data-color="green"]:hover) {
     animation: fadeBye 15s ease-in-out infinite;
   }
   .fade-arrow {
-    animation: fadearrow 15s ease-in-out infinite;
+    animation: fadearrow 10s ease-in-out infinite;
   }
 }
 

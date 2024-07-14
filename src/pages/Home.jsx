@@ -59,7 +59,7 @@ const Home = () => {
     { 
       position: new THREE.Vector3(90, -13, -100), 
       camera: { 
-        position: new THREE.Vector3(65.5, -15, -130), 
+        position: new THREE.Vector3(65, -15, -130), 
         target: new THREE.Vector3(90, -13, -100) 
       },
       minDistance: 8,
@@ -76,7 +76,7 @@ const Home = () => {
       minDistance: 15,
       maxDistance: 80,
       minPolarAngle: Math.PI / 6,
-      maxPolarAngle: Math.PI / 1.75
+      maxPolarAngle: Math.PI / 1.8
     },
     { 
       position: new THREE.Vector3(-230, -4, -388), 
@@ -90,10 +90,10 @@ const Home = () => {
       maxPolarAngle: Math.PI / 1.8
     },
     { 
-      position: new THREE.Vector3(-275, -1.5, -150), 
+      position: new THREE.Vector3(-275, -2, -150), 
       camera: { 
         position: new THREE.Vector3(-305, 15, -190), 
-        target: new THREE.Vector3(-275, -1.5, -150) 
+        target: new THREE.Vector3(-275, -2, -150) 
       },
       minDistance: 10,
       maxDistance: 100,
@@ -120,7 +120,7 @@ const Home = () => {
       minDistance: 10,
       maxDistance: 200,
       minPolarAngle: Math.PI / 8,
-      maxPolarAngle: Math.PI / 1.75
+      maxPolarAngle: Math.PI / 1.8
     },
   ], []);
 
@@ -159,11 +159,11 @@ const Home = () => {
 
   const adjustDroneForScreenSize = useCallback(() => {
     let droneScale;
-    let droneRotation = [-0.25, -0.6, -0.3];
+    let droneRotation = [-0.3, -0.6, -0.3];
     if (window.innerWidth < 768) {
-      droneScale = [3, 3, 3];
+      droneScale = [4, 4, 4];
     } else {
-      droneScale = [3, 3, 3];
+      droneScale = [4, 4, 4];
     }
     return [droneScale, droneRotation];
   }, []);
@@ -310,7 +310,7 @@ const Home = () => {
       onClick={() => setCurrentStage((prevStage) => (prevStage > 1 ? prevStage - 1 : points.length))}>
         <span className='text-bold text-2xl'>&lt;</span></button>
       <button className={`block absolute z-10 h-12 lg:h-14 w-12 lg:w-14 bg-opacity-50 ${audioPlaying ? 'bg-black animate-pulse' : 'bg-red-950'}
-      bottom-12 md:bottom-14 lg:bottom-16 left-6 sm:left-8 md:left-10 lg:left-12 m-1 text-white rounded-full cursor-pointer`}
+      bottom-10 md:bottom-12 lg:bottom-14 left-6 sm:left-8 md:left-10 lg:left-12 m-1 text-white rounded-full cursor-pointer`}
       onClick={() => playBGM('/bgm.mp3')}>
         <span className='text-bold text-2xl lg:text-3xl'>⋆.˚📼</span></button>
         
@@ -357,7 +357,7 @@ const Home = () => {
         <Suspense fallback={<Loader />}>
           <directionalLight 
             position={[Math.cos(Math.PI / 6), 1, Math.sin(Math.PI / 6)]}
-            intensity={1.5} 
+            intensity={1.3} 
             castShadow 
           />
           <ambientLight intensity={0.5} />
