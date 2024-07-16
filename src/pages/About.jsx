@@ -41,7 +41,7 @@ const About = () => {
           design. I enjoy collaborating with others and am eager to work on 
           exciting projects with talented teams.</p>
           </div>
-          <div className='mt-12 flex'>
+          {/* <div className='mt-12 flex'>
             <VerticalTimeline>
               {experiences.map((experience) => (
                 <VerticalTimelineElement
@@ -73,7 +73,7 @@ const About = () => {
                 </VerticalTimelineElement>
               ) )}
             </VerticalTimeline>
-          </div>
+          </div> */}
       </div>
       <div className='py-10'>
         <h3 className='subhead-text'>About the website</h3>
