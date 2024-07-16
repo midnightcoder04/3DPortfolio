@@ -223,13 +223,13 @@ export const projects = [
         description: 'A simple web-extension made out of curiosity of add-on workings. It displays Pikachu images from the internet.',
         link: 'https://github.com/midnightcoder04p',
     },
-    {
-        iconUrl: pg5,
-        theme: 'btn-back-black',
-        name: 'ASCI Website',
-        description: 'Developed a website for listings some basic information about a community. Static webpage for the purpose of providal of information.',
-        link: 'https://github.com/midnightcoder04',
-    },
+    // {
+    //     iconUrl: pg5,
+    //     theme: 'btn-back-black',
+    //     name: 'ASCI Website',
+    //     description: 'Developed a website for listings some basic information about a community. Static webpage for the purpose of providal of information.',
+    //     link: 'https://github.com/midnightcoder04',
+    // },
     {
         iconUrl: pg6,
         theme: 'btn-back-yellow',
