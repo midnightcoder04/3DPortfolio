@@ -3,7 +3,7 @@ import { Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { Home, About, Resume, Projects, Contact } from './pages';
 
-const App = () => {
+const App = () => {x
   return (
     <main className='bg-slate-300/20 h-screen'>
         <Router>

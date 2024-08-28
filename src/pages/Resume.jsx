@@ -12,7 +12,7 @@ const Resume = () => {
       </div>
       <div className='flex my-16 gap-12 flex-grow '>
       <iframe 
-          src='/johnwick.pdf' 
+          src='/resume.pdf' 
           title='Resume' 
           className='w-full border border-slate-300 rounded-lg'
           style={{ minHeight: '80vh' }}
