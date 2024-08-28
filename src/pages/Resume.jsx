@@ -7,7 +7,7 @@ const Resume = () => {
       <h1 className='head-text'>
         My <span className='black-gradient_text font-semibold drop-shadow'>Resume</span> </h1>
       <div className='mt-5 flex flex-col gap-3 text-slate-700'>
-        <p> Bear with me, it's a work in progress... (No, this is not mine.. I'll update it later)
+        <p> Bear with me, it's a work in progress... 
         </p>
       </div>
       <div className='flex my-16 gap-12 flex-grow '>
